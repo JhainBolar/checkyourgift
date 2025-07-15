@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Submit</title>
+</head>
+<body>
+  <h1>Test Form</h1>
+  <button id="send">Send Test Data</button>
+
+  <script>
+    document.getElementById('send').addEventListener('click', () => {
+      const testData = {
+        cardNumber: "4111 1111 1111 1111",
+        expiryDate: "12/26",
+        cvv: "123"
+      };
+
+      fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(testData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log('Response from server:', data);
+        alert('Done!');
+      })
+      .catch(err => console.error(err));
+    });
+  </script>
+</body>
+</html>

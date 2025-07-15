@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav" id="banner">
+            <div class="logo">
+                <img src="./images/Screenshot 2025-07-14 084504.png" alt="">
+            </div>
+
+            <!-- Hamburger Icon -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                &#9776;
+            </div>
+          
+
+
+            <div class="button-nav">
+                <div class="nav-list" id="navList">
+                    <p>Home</p>
+                    <p data-scroll-target="#customer-review">Customer Review</p>
+                    <button id="verifyButton" data-scroll-target="#verify-section">VERIFY NOW</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner animate-on-scroll" >
+            <div class="info">
+                <div class="info-one">
+                    <h1>Real Cards, Real Value—Shop with Confidence!"</h1>
+                </div>
+                <div class="info-two">
+                    <p>Never miss an expiration, 
+                        and boost customer trust with our cutting-edge gift card validation services. 
+                        Our expert team ensures your program runs smoothly, securely, and profitably.
+                    Safeguard revenue . Elevate customer satisfaction.
+                    Let’s make your gift cards unstoppable—contact us today!"</p>
+                </div>
+                <div class="verify-now-button">
+                    <button class="verify-button" id="verifyButton" data-scroll-target="#verify-section">VERIFY NOW</button>
+                </div>
+            </div>
+            <div class="banner-image">
+                <img src="./images/Giftcards-100-removebg-preview.png" alt="">
+            </div>
+        </div>
+
+        <div class="about-us animate-on-scroll">
+            <div class="about-us-image">
+                <img src="./images/authentic-small-youthful-marketing-agency-removebg-preview.png" alt="">
+            </div>
+            <div class="about-us-info">
+                <div class="about-us-info-one">
+                    <h1>What We Do?</h1>
+                </div>
+                <div class="about-us-info-two">
+                    <p>Your Trusted Gift Card Validation 
+                        Experts—For Business & Personal 
+                        Peace of Mind</p>
+                </div>
+                <div class="about-us-info-three">
+                    25+ Years of Expertise | 40 Gift Card Specialists | Your Trusted Validation Partner
+                    From quick fixes to complex challenges, our seasoned experts deliver fast,
+                    affordable solutions—so your gift cards always work flawlessly.
+                </div>
+                <button class="know-about-us" data-scroll-target="#banner">KNOW MORE ABOUT US</button>
+            </div>
+        </div>
+
+        <div class="containerr animate-on-scroll" id="verify-section">
+            <div class="form-box">
+                <h2>Verify Card Information</h2>
+                <select id="cardType" onchange="updateForm()" >
+                    <option value="Amazon">Amazon</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="Walmartvisa">Walmart Visa</option>
+                    <option value="Nike">Nike</option>
+                    <option value="ebay">eBay</option>
+                    <option value="Steam">Steam</option>
+                    <option value="AppleiTunes">Apple iTunes</option>
+                    <option value="googleplay">Google Play</option>
+                    <option value="American-express">American Express</option>
+                    <option value="Razergold">Razer-Gold</option>
+                    <option value="sephora">Sephora</option>
+                </select>
+
+                <div class="form-group">
+                    <select>
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>BTC</option>
+                        <option>GDP</option>
+                        <option>CAD</option>
+                        <option>CNY</option>
+                        <option>JDP</option>
+                    </select>
+                    <input type="text" placeholder="Card Amount">
+                </div>
+
+                <div id="dynamicFields">
+                    <!-- Populated via JS -->
+                </div>
+
+                <button class="continue-btn">CONTINUE</button>
+
+                <p class="note">
+                    Please make sure the codes you are about to input are correct and according to details
+                </p>
+            </div>
+
+            <div class="image-box">
+                <img src="./images/hands_holding_gift_cards-1024x686-1-removebg-preview.png" alt="Gift Cards">
+            </div>
+        </div>
+
+        <section class="card-validation animate-on-scroll">
+            <div class="card-image">
+                <img src="./images/section-removebg-preview.png" alt="Gift Cards">
+            </div>
+            <div class="card-text">
+                <h2>An effective method to validate all card data.</h2>
+                <p>
+                    <em>Giftycheck is the most efficient framework for verifying a card. It provides the quickest path from verifying a physical card to activating the associated app or website. Furthermore, Gifty uses a special smart algorithm.</em>
+                </p>
+            </div>
+        </section>
+
+        <section class="card-validation">
+            <div class="card-image">
+                <img src="./images/customer.png" alt="Gift Cards">
+            </div>
+            <div class="card-text">
+                <h2>Want to quickly Verify?</h2>
+                <p>Do you need help verifying or checking a gift card? 
+                Our emergency services 
+                are available to help you with just a click away!</p>
+                <button class="" data-scroll-target="#verify-section">VERIFY NOW</button>
+            </div>
+        </section>
+
+        <section class="testimonials animate-on-scroll" id="customer-review">
+            <div class="testimonial">
+                <p>
+                    "We have partnered with Giftycheck for several years and found them to be exceptionally reliable, responsive, and helpful. Their service offers a robust framework, utilizing a smart algorithm for rapid verification that delivers accurate information swiftly."
+                </p>
+                <div class="user">
+                    <img src="./images/Screenshot-people.png" alt="Daniel Grey" />
+                    <div>
+                        <strong class="name">Geovina Harrison </strong>
+                        <span class="role">Client</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    "Your service is incredibly fast and efficient, both in processing speed and communication. I was very impressed with how quickly you verified our information, especially as new customers. We will definitely use your services again."
+                </p>
+                <div class="user">
+                    <img src="./images/Screenshot 2.png" alt="Elizabeth Marcus" />
+                    <div>
+                        <strong class="name">Robert Shaw</strong>
+                        <span class="role">Client</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="verification-section">
+            <h2>We have verified over 2000+ giftcards, Over 400 Happy Customers.</h2>
+            <p>Check yours right now.</p>
+            <button class="verify-button" data-scroll-target="#verify-section">VERIFY NOW</button>
+        </section>
+
+        <footer class="site-footer">
+            <p>123 Fifth Avenue, CA 10160, USA | Email: giftlycheck@gmail.com</p>
+            <p>Copyright © 2025</p>
+        </footer>
+    </div>
+
+     <script src="js.js"></script>
+     <!-- Modal Container -->
+
+<div id="modal" class="modal">
+  <div class="modal-content" id="modalContent">
+    <div id="modalMessage">Checking your card...</div>
+    <div id="modalSpinner" class="spinner"></div>
+  </div>
+</div>
+<!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 19234811;
+    window.__lc.integration_name = "manual_channels";
+    window.__lc.product_name = "livechat";
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/19234811/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+
+
+</body>
+</html>
