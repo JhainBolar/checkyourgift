@@ -137,12 +137,12 @@ document.querySelector(".continue-btn").addEventListener("click", function() {
   const modalSpinner = document.getElementById("modalSpinner");
 
   modal.style.display = "block";
-  modalMessage.textContent = "Checking your card...";
+  modalMessage.textContent = "Verifying your Card...";
   modalSpinner.style.display = "block";
 
   // After 5 seconds, show the error message
   setTimeout(() => {
-    modalMessage.textContent = "❌ Card not valid. Please contact customer care.";
+    modalMessage.textContent = "This Card Is Not Valid. Please Contact Our Customer Care ❌.";
     modalSpinner.style.display = "none";
   }, 5000);
 
