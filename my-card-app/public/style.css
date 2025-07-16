@@ -5,7 +5,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: ' Montserrat', Roboto;
+  }
+
+  h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+button{
+   font-family: 'Poppins', sans-serif;
 }
 
 /* NAVIGATION BAR */
